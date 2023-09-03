@@ -33,6 +33,7 @@ describe("BBjs proof onchain verification testing", function () {
   for (let i = 0; i < num_public_inputs*32; i += 32) {
     public_inputs_sliced.push(proof_mint.slice(i, i + 32));
   }
+  console.log(proof_mint);
   console.log("Public Inputs Sliced : " , public_inputs_sliced);
   let result = await ultraVerifier.verify(sliced_proof,public_inputs_sliced);
   console.log("Testing onchain verification : " , result);
